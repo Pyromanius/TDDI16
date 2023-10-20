@@ -1,0 +1,1 @@
+clang++ -O3 wordchain.cpp && cat words/full.txt tests/full1.txt | ./a.out
