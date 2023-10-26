@@ -38,9 +38,12 @@
  *
  **********************************************************************/
 
-Brute: O(n⁴)
+Brute:         O(n⁴)
 
-Sortering: O(n²log*n)
+Sortering:     O(n²log*n)
+
+Motivation:    Värsta fallet för funktionen är när den inte hittar några punkter, eftersom den då måste gå igenom 
+               flest loopar och if-satser.
 
 
 /**********************************************************************
