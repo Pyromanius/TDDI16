@@ -1,91 +1,102 @@
 /**********************************************************************
- *  Mönsterigenkänning readme.txt
+ *  MÃ¶nsterigenkÃ¤nning readme.txt
  **********************************************************************/
 
- Ungefärligt antal timmar spenderade på labben (valfritt):
+ UngefÃ¤rligt antal timmar spenderade pÃ¥ labben (valfritt):
 
 /**********************************************************************
  * Empirisk analys
  *
- * Fyll i tabellen nedan med riktiga körtider i sekunder när det känns
- * vettigt att vänta på hela beräkningen.
- * Ge uppskattningar av körtiden (baserat på tidskomplexiteten)
- * i övriga fall.
+ * Fyll i tabellen nedan med riktiga kÃ¶rtider i sekunder nÃ¤r det kÃ¤nns
+ * vettigt att vÃ¤nta pÃ¥ hela berÃ¤kningen.
+ * Ge uppskattningar av kÃ¶rtiden (baserat pÃ¥ tidskomplexiteten)
+ * i Ã¶vriga fall.
  *
  **********************************************************************/
     
       N       brute       sortering
  ----------------------------------
-    150         6             3
-    200        17             6
-    300        43            16
-    400        95            36
-    800       741           133
-   1600      5255           560
-   3200     30450          2402   
-   6400    218634         10412
-  12800   *crash*         32654
+    150          6             3
+    200         17             6
+    300         43            16
+    400         95            36
+    800        741           133
+   1600       5255           560
+   3200      30450          2402   
+   6400     218634         10412
+  12800    *crash*         32654
 
 
 /**********************************************************************
  * Teoretisk analys
  *
- * Ge ordo-uttryck för värstafallstiden för programmen som en funktion
+ * Ge ordo-uttryck fÃ¶r vÃ¤rstafallstiden fÃ¶r programmen som en funktion
  * av N. Ge en kort motivering.
  *
- * Matchar brute-lösningen sitt värstafall i praktiken, eller har den
- * ett medelfall som är bättre?
+ * Matchar brute-lÃ¶sningen sitt vÃ¤rstafall i praktiken, eller har den
+ * ett medelfall som Ã¤r bÃ¤ttre?
  *
  **********************************************************************/
 
-Brute:
+Brute: O(nâ´)
 
-Sortering:
+Sortering: O(nÂ²log*n)
 
 
 /**********************************************************************
- * Energianvändning
+ * EnergianvÃ¤ndning
  *
- * Antag att du använder mönsterigenkänningsprogrammet för att analysera
- * data från en kamera. Kameran sitter i en byggnad och tar en bild
- * på stommen av byggnaden var 30:e minut. Bilden förbehandlas sedan
+ * Antag att du anvÃ¤nder mÃ¶nsterigenkÃ¤nningsprogrammet fÃ¶r att analysera
+ * data frÃ¥n en kamera. Kameran sitter i en byggnad och tar en bild
+ * pÃ¥ stommen av byggnaden var 30:e minut. Bilden fÃ¶rbehandlas sedan
  * lite, innan punkter som representerar stommen skickas till
- * mönsterigenkänningsprogrammet. Hittas inte tillräckligt många raka
- * linjer så betyder det att något håller på att gå sönder, och
- * att byggnaden behöver noggrannare inspektion.
+ * mÃ¶nsterigenkÃ¤nningsprogrammet. Hittas inte tillrÃ¤ckligt mÃ¥nga raka
+ * linjer sÃ¥ betyder det att nÃ¥got hÃ¥ller pÃ¥ att gÃ¥ sÃ¶nder, och
+ * att byggnaden behÃ¶ver noggrannare inspektion.
  *
- * Hur mycket energi sparar du på ett år om du använder din snabbare
- * sorteringslösning i stället för brute-lösningen? Du kan anta följande:
- * - Systemet körs 24/7 under hela året.
- * - Inget annat körs på det här systemet.
- * - Systemet drar 8 W när det inte gör något (idle)
- * - Systemet drar 36 W när det arbetar (med 1 kärna)
- * - Räkna med att ditt program körs var 30:e minut (= 2 gånger/timme)
- * - För- och efterbehandling är snabba, så vi kan bortse från dem
- * - Indata till programmet innehåller ca 6400 punkter
- * - Det är inte skottår (= 365 dagar)
+ * Hur mycket energi sparar du pÃ¥ ett Ã¥r om du anvÃ¤nder din snabbare
+ * sorteringslÃ¶sning i stÃ¤llet fÃ¶r brute-lÃ¶sningen? Du kan anta fÃ¶ljande:
+ * - Systemet kÃ¶rs 24/7 under hela Ã¥ret.
+ * - Inget annat kÃ¶rs pÃ¥ det hÃ¤r systemet.
+ * - Systemet drar 8 W nÃ¤r det inte gÃ¶r nÃ¥got (idle)
+ * - Systemet drar 36 W nÃ¤r det arbetar (med 1 kÃ¤rna)
+ * - RÃ¤kna med att ditt program kÃ¶rs var 30:e minut (= 2 gÃ¥nger/timme)
+ * - FÃ¶r- och efterbehandling Ã¤r snabba, sÃ¥ vi kan bortse frÃ¥n dem
+ * - Indata till programmet innehÃ¥ller ca 6400 punkter
+ * - Det Ã¤r inte skottÃ¥r (= 365 dagar)
  *
- * Att jämföra med drar en kombinerad kyl/frys ca 200 kWh per år
+ * Att jÃ¤mfÃ¶ra med drar en kombinerad kyl/frys ca 200 kWh per Ã¥r
  * (enligt Energimyndigheten).
  *
- * Kom ihåg: energi mäts ofta i kWh, vilket är:
+ * Kom ihÃ¥g: energi mÃ¤ts ofta i kWh, vilket Ã¤r:
  *  energi (kWh) = effekt (kW) * tid (h)
  *
- * Tips: ett sätt att räkna på är att först räkna förbrukningen av
- * ett system som inte gör något på ett helt år, sedan lägga till
- * den extra förbrukningen (36 W - 8 W = 28 W) för tiden som systemet
- * är aktiv.
+ * Tips: ett sÃ¤tt att rÃ¤kna pÃ¥ Ã¤r att fÃ¶rst rÃ¤kna fÃ¶rbrukningen av
+ * ett system som inte gÃ¶r nÃ¥got pÃ¥ ett helt Ã¥r, sedan lÃ¤gga till
+ * den extra fÃ¶rbrukningen (36 W - 8 W = 28 W) fÃ¶r tiden som systemet
+ * Ã¤r aktiv.
  *
- * (Siffrorna är löst baserade på en Intel i9-9900K, vi räknar bara på
- * CPU:n för enkelhets skull, besparingarna blir sannolikt större om
- * vi räknar på större delar av systemet, även om andra komponenter
- * också drar ström i "idle".)
+ * (Siffrorna Ã¤r lÃ¶st baserade pÃ¥ en Intel i9-9900K, vi rÃ¤knar bara pÃ¥
+ * CPU:n fÃ¶r enkelhets skull, besparingarna blir sannolikt stÃ¶rre om
+ * vi rÃ¤knar pÃ¥ stÃ¶rre delar av systemet, Ã¤ven om andra komponenter
+ * ocksÃ¥ drar strÃ¶m i "idle".)
  *
  **********************************************************************/
+ 
+     365 * 24 h = 8760 h
+     ( 8760 h * 8 W ) / 1000 = 70.08kWh per Ã¥r (idle)
 
-Förbrukning av brute på ett år: 108.38 kWh
+FÃ¶rbrukning av brute pÃ¥ ett Ã¥r: 99.87 kWh
 
-Förbrukning av sotering på ett år: 71.9 kWh
+     8760 h * 2 = 17520
+     17520 * 218.6 s = 3'829'872 s
+     ( 3'829'872 s * 28 W ) / ( 1000 * 3600) = 29.79 kWh
 
-Skillnad: 36.48 kWh
+
+FÃ¶rbrukning av sortering pÃ¥ ett Ã¥r: 71.5 kWh
+
+     17520 * 10.4 s = 182'208 s
+     ( 182'208 * 28W ) / ( 1000 * 3600 ) = 1.42 kWh
+
+Skillnad: 28.37 kWh
 
