@@ -43,7 +43,9 @@ Brute:         O(n⁴)
 Sortering:     O(n²log*n)
 
 Motivation:    Värsta fallet för funktionen är när den inte hittar några punkter, eftersom den då måste gå igenom 
-               flest loopar och if-satser.
+               flest loopar och if-satser. Detta betyder att i fallet brute.cpp så går den alltid igenom alla kombinationer 
+               av 4 punkter, medans i fast.cpp så kommer funktionen endast fortsätta söka efter punkter i de fall då 2
+               punkter hittas på samma axel. Den behöver alltså inte söka igenom ett helt set om 4 punkter.
 
 
 /**********************************************************************
