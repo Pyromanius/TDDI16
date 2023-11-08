@@ -46,6 +46,13 @@ Motivation:    Värsta fallet för funktionen är när den inte hittar några pu
                flest loopar och if-satser. Detta betyder att i fallet brute.cpp så går den alltid igenom alla kombinationer 
                av 4 punkter, medans i fast.cpp så kommer funktionen endast fortsätta söka efter punkter i de fall då 2
                punkter hittas på samma axel. Den behöver alltså inte söka igenom ett helt set om 4 punkter.
+               Såhär har vi tänkt:
+               sort i find consecutive är O(nlogn). 
+               Loopen jämte är O(n). 
+               find_consecutive blir därför O(n * log(n) + n).
+               find_consecutive körs n gånger i main så loopen i main blir då
+               O(n * (nlogn + n) = O(n²log*n) + n²) = O(n²log*n)
+
 
 
 /**********************************************************************
